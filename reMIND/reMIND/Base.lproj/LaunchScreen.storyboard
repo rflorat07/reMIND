@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo_splash" translatesAutoresizingMaskIntoConstraints="NO" id="bny-oS-0C1">
+                                <rect key="frame" x="0.0" y="211" width="375" height="244"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bny-oS-0C1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QvO-No-nLa"/>
+                            <constraint firstItem="bny-oS-0C1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RYo-p1-LuC"/>
+                            <constraint firstItem="bny-oS-0C1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kJp-4L-HCW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bny-oS-0C1" secondAttribute="trailing" id="w2r-3z-WEr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_logo_splash" width="222" height="244"/>
+    </resources>
 </document>

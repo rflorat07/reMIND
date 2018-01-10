@@ -26,7 +26,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_no_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mvb-Af-KUL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_no_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mvb-Af-KUL">
                                             <rect key="frame" x="20" y="15" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="M1h-Vh-WLv"/>
@@ -52,7 +52,7 @@
                                 <connections>
                                     <outlet property="imgTask" destination="mvb-Af-KUL" id="C0W-rN-3gz"/>
                                     <outlet property="lblTask" destination="fRY-gf-uZq" id="k0i-Zn-1bv"/>
-                                    <segue destination="KOX-yB-jw1" kind="show" id="fBE-sn-0QW"/>
+                                    <segue destination="KOX-yB-jw1" kind="show" identifier="detailSegue" id="fBE-sn-0QW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -63,6 +63,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="reMIND" id="Bit-a7-6Tf">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fgT-L8-tqh"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icon-add" id="nV2-hz-EUh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -165,6 +166,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mOC-Ku-uzm">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
