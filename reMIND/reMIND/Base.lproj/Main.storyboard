@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fuV-00-tv5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="fuV-00-tv5" customClass="TaskCell" customModule="reMIND" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fuV-00-tv5" id="IKm-fD-OoT">
@@ -50,6 +50,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgTask" destination="mvb-Af-KUL" id="C0W-rN-3gz"/>
+                                    <outlet property="lblTask" destination="fRY-gf-uZq" id="k0i-Zn-1bv"/>
                                     <segue destination="KOX-yB-jw1" kind="show" id="fBE-sn-0QW"/>
                                 </connections>
                             </tableViewCell>
@@ -63,6 +65,9 @@
                     <navigationItem key="navigationItem" title="reMIND" id="Bit-a7-6Tf">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icon-add" id="nV2-hz-EUh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addTask:" destination="jqc-Tw-lsp" id="Y4f-wH-4Hq"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -70,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="316" y="111.99400299850076"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Icons View Controller-->
         <scene sceneID="Veq-9a-XAg">
             <objects>
-                <collectionViewController id="KOX-yB-jw1" sceneMemberID="viewController">
+                <collectionViewController id="KOX-yB-jw1" customClass="IconsViewController" customModule="reMIND" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yxQ-AE-HNX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +90,7 @@
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4Qw-Rc-yhS">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CellIdentifier" id="4Qw-Rc-yhS" customClass="IconCell" customModule="reMIND" customModuleProvider="target">
                                 <rect key="frame" x="10" y="90" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -114,9 +119,13 @@
                                     <constraint firstAttribute="bottom" secondItem="lNG-D2-nbQ" secondAttribute="bottom" constant="5" id="u6Z-kT-Q8h"/>
                                     <constraint firstAttribute="trailing" secondItem="lNG-D2-nbQ" secondAttribute="trailing" constant="10" id="zGV-VQ-dlO"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="icon" destination="w6p-ue-G8T" id="wUY-GA-Ind"/>
+                                    <outlet property="title" destination="lNG-D2-nbQ" id="YPD-CH-dqy"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C18-1P-1hU">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HeaderView" id="C18-1P-1hU" customClass="HeaderView" customModule="reMIND" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -134,6 +143,9 @@
                                 <constraint firstItem="hR2-At-aUU" firstAttribute="top" secondItem="C18-1P-1hU" secondAttribute="topMargin" constant="20" id="VMB-tx-8aH"/>
                                 <constraint firstItem="hR2-At-aUU" firstAttribute="leading" secondItem="C18-1P-1hU" secondAttribute="leadingMargin" constant="36" id="aUy-1f-vD3"/>
                             </constraints>
+                            <connections>
+                                <outlet property="taskname" destination="hR2-At-aUU" id="Dgi-0u-b8p"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="KOX-yB-jw1" id="l3f-qI-ItG"/>
